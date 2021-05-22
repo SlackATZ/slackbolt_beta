@@ -5,6 +5,10 @@ const app = new App({
   signingSecret: process.env.SLACK_SIGNING_SECRET
 });
 
+app.command('/betatest', ({ command, ack, say }) => {
+    say(`Hello world !`);
+});
+
 app.event('app_home_opened', ({ event, say }) => {
     say(`Hello world, <@${event.user}>!`);
 });
